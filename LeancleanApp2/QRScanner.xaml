@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LeancleanApp2.QRScanner"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ResultLabel" IsVisible="True" />
+            
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <zxing:ZXingScannerView    
+                    x:Name="Scanner"
+                    IsScanning="true" 
+                    OnScanResult="ZXingScannerView_OnScanResult" />
+                <zxing:ZXingDefaultOverlay               
+                x:Name="ScannerOverlay"                                                       
+                BottomText="Place the red line over the barcode you'd like to scan." />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

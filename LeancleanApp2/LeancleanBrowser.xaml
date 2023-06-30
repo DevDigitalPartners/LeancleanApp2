@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LeancleanApp2.LeancleanBrowser"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms">
+
+    <StackLayout>
+        <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" Navigating="OnWebStartNavigating">
+            <WebView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="Handle_SwipedLeft"/>
+                <SwipeGestureRecognizer Direction="Right" Swiped="Handle_SwipedRight"/>
+            </WebView.GestureRecognizers>
+        </WebView>
+        <Button BackgroundColor="#83C934" TextColor="White" Text="Scan QR Code" Clicked="NavigateTo" />
+    </StackLayout>
+
+</ContentPage>
